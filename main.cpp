@@ -63,6 +63,8 @@ int main() {
         avlTree.print();
     }
 
+    cout << "Test WeChat Alert" << endl;
+
     cout << "End of main()" << endl;
     return 0;
 }
