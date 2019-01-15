@@ -1,4 +1,5 @@
 #include <iostream>
+#include "AVLTree.h"
 #include "SearchBinaryTree.h"
 #include "Stack.h"
 #include "Queue.h"
@@ -43,6 +44,23 @@ int main() {
         }
 
         cout << "end test queue" << endl;
+
+        cout << "Test AVLTree" << endl;
+
+        AVLTree<int> avlTree;
+        avlTree.insert(1);
+        avlTree.insert(2);
+        avlTree.insert(3);
+        avlTree.insert(4);
+        avlTree.insert(5);
+        cout << "----------------" << endl;
+        avlTree.print();
+        cout << "----------------" << endl;
+        avlTree.insert(6);
+        avlTree.print();
+        cout << "----------------" << endl;
+        avlTree.remove(6);
+        avlTree.print();
     }
 
     cout << "End of main()" << endl;

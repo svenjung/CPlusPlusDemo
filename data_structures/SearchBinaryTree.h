@@ -224,7 +224,7 @@ TreeNode<T> *SearchBinaryTree<T>::findMin(const TreeNode<T> *n) const {
     } else if (n->left == nullptr) {
         return n;
     } else {
-        return findMax(n->left);
+        return findMin(n->left);
     }
 }
 
