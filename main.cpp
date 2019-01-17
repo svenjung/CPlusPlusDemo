@@ -1,11 +1,11 @@
 #include <iostream>
-#include "AVLTree.h"
-#include "SearchBinaryTree.h"
-#include "Stack.h"
-#include "Queue.h"
+#include "data_structures.h"
 
 using std::cout;
 using std::endl;
+
+//template <typename T>
+//T (*p)(T, T);
 
 int main() {
     {
@@ -47,6 +47,10 @@ int main() {
 
         cout << "Test AVLTree" << endl;
 
+        int a{10};
+
+        cout << "int a value = " << a << endl;
+
         AVLTree<int> avlTree;
         avlTree.insert(1);
         avlTree.insert(2);
@@ -61,10 +65,25 @@ int main() {
         cout << "----------------" << endl;
         avlTree.remove(6);
         avlTree.print();
+
+        BinaryHeap<int> heap;
+        int minItem;
+        heap.insert(10);
+        heap.insert(8);
+        heap.insert(9);
+        heap.insert(7);
+        heap.insert(1);
+        heap.insert(4);
+
+        while (!heap.isEmpty()) {
+            heap.deleteMin(minItem);
+            cout << "current min : " << minItem << endl;
+        }
     }
 
     cout << "Test WeChat Alert" << endl;
 
     cout << "End of main()" << endl;
+
     return 0;
 }

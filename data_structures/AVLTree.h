@@ -11,11 +11,11 @@
 
 // 定义左右子树的高度差最大为 1
 #define ALLOWED_IMBALANCE 1
-#define max(x, y) x > y ? x : y
 
 using std::move;
 using std::cout;
 using std::endl;
+using std::max;
 
 template<typename T>
 struct AvlNode {
@@ -47,9 +47,9 @@ private:
 
     bool contains(const T &, AvlNode<T> *) const;
 
-    AvlNode<T> *&findMin(AvlNode<T> *) const;
+    AvlNode<T> *&findMin(AvlNode<T> *&) const;
 
-    AvlNode<T> *&findMax(AvlNode<T> *) const;
+    AvlNode<T> *&findMax(AvlNode<T> *&) const;
 
     void balance(AvlNode<T> *&);
 
@@ -337,7 +337,7 @@ bool AVLTree<T>::contains(const T &t, AvlNode<T> *n) const {
 }
 
 template<typename T>
-AvlNode<T> *&AVLTree<T>::findMin(AvlNode<T> *node) const {
+AvlNode<T> *&AVLTree<T>::findMin(AvlNode<T> *&node) const {
     if (node == nullptr) {
         return node;
     }
@@ -350,7 +350,7 @@ AvlNode<T> *&AVLTree<T>::findMin(AvlNode<T> *node) const {
 }
 
 template<typename T>
-AvlNode<T> *&AVLTree<T>::findMax(AvlNode<T> *node) const {
+AvlNode<T> *&AVLTree<T>::findMax(AvlNode<T> *&node) const {
     if (node == nullptr) {
         return nullptr;
     }
