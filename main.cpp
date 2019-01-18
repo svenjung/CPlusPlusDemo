@@ -1,13 +1,25 @@
 #include <iostream>
 #include "data_structures.h"
+#include "algorithm/sort.h"
 
 using std::cout;
 using std::endl;
 
-//template <typename T>
-//T (*p)(T, T);
+using namespace SvenSort;
 
 int main() {
+    vector<int> array{24, 13, 26, 1, 2, 27, 38, 15};
+    SvenSort::mergeSort(array);
+    cout << "After sort : \n";
+    for (int i = 0; i <= array.size() - 1; ++i) {
+        cout << array[i];
+        if (i + 1 != array.size()) {
+            cout << ", ";
+        } else {
+            cout << endl;
+        }
+    }
+
     {
         SearchBinaryTree<int> sbt;
         sbt.insert(20);
@@ -79,6 +91,8 @@ int main() {
             heap.deleteMin(minItem);
             cout << "current min : " << minItem << endl;
         }
+
+        cout << "end of block" << endl;
     }
 
     cout << "Test WeChat Alert" << endl;
